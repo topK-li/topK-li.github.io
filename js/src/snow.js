@@ -1,5 +1,5 @@
 /*圆形雪花*/
-
+<script type="text/javascript" src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 function (snow) {
     /* 可配置属性 */
     snow = snow || {};
