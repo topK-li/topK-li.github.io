@@ -19,7 +19,7 @@
 
 
     <title>2018美亚杯个人赛 | 你的朋友的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/jpeg" href="/images/profile_photo/1.jpeg">
     
 
 
@@ -51,7 +51,8 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="你的朋友的博客" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -61,7 +62,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/images/profile_photo/4.jpg" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">你的朋友的博客</span>
                 </a>
@@ -165,7 +166,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/images/profile_photo/4.jpg" class="logo-img circle responsive-img">
         
         <div class="logo-name">你的朋友的博客</div>
         <div class="logo-desc">
@@ -330,6 +331,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -402,6 +416,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -445,8 +464,8 @@
 <h3 id="33"><a href="#33" class="headerlink" title="33"></a>33</h3><p><img src="/images/2020/11/12/b13df552-c283-47f1-9024-153b4ee36d44.png"><br>在取证大师-&gt;取证结果-&gt;系统痕迹-&gt;系统信息 查得计算机主机名为：<br><strong>VICTOR-HOME</strong><br><img src="/images/2020/11/12/cad3d382-f264-4d60-bcef-4475d200b942.png"></p>
 <h3 id="34"><a href="#34" class="headerlink" title="34"></a>34</h3><p><img src="/images/2020/11/12/5dc14a95-5e59-4ece-8306-523d73ba4351.png"><br>在取证大师-&gt;取证结果-&gt;系统痕迹-&gt;系统时间更改 可找到之前的名称是：<br><strong>WIN-6S2GC51RGL9</strong><br><img src="/images/2020/11/12/081d571b-2c40-45f9-bdb5-e7ba205d88df.png"></p>
 <h3 id="35"><a href="#35" class="headerlink" title="35"></a>35</h3><p><img src="/images/2020/11/12/60d72887-9a85-4f79-a7bd-569caf8473e4.png"><br>在取证大师中搜索查看日志可知WIN-6S2GC51RGL9更改为VICTOR-HOME的时间是：<br><strong>2018-10-25 16:07:38 +8</strong><br><img src="/images/2020/11/12/1f35d011-f1d6-4c78-826c-59635007d2d3.png"></p>
-<h3 id="36"><a href="#36" class="headerlink" title="36"></a>36</h3><p><img src="/images/2020/11/12/d33e096e-0378-49f7-ac58-8340170a1371.png"><br>在取证大师-&gt;取证结果-&gt;邮件解析 可知victor日常使用的电邮账号是：<br><strong><a href="mailto:&#x76;&#x69;&#x63;&#x74;&#x6f;&#x72;&#x32;&#48;&#49;&#56;&#49;&#x31;&#64;&#x68;&#111;&#116;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#x76;&#x69;&#x63;&#x74;&#x6f;&#x72;&#x32;&#48;&#49;&#56;&#49;&#x31;&#64;&#x68;&#111;&#116;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a></strong><br><img src="/images/2020/11/12/9d8fad12-b72e-4521-a71c-4a0bc913066d.png"></p>
-<h3 id="37-疑似答案错误）"><a href="#37-疑似答案错误）" class="headerlink" title="37(疑似答案错误）"></a>37(疑似答案错误）</h3><p><img src="/images/2020/11/12/1f076001-9982-48c0-bc6c-6d6ea1193ce5.png"><br>在取证大师-&gt;取证结果-&gt;邮件解析 可知<a href="mailto:&#118;&#105;&#x63;&#116;&#x6f;&#114;&#50;&#x30;&#x31;&#56;&#49;&#49;&#64;&#104;&#111;&#116;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#118;&#105;&#x63;&#116;&#x6f;&#114;&#50;&#x30;&#x31;&#56;&#49;&#49;&#64;&#104;&#111;&#116;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a>最后一次更改密码时间是：<br><strong>2018-10-31</strong>选 <strong>C</strong><br><img src="/images/2020/11/12/b18ca19f-de97-4980-b36f-09f3eb54fbaf.png"></p>
+<h3 id="36"><a href="#36" class="headerlink" title="36"></a>36</h3><p><img src="/images/2020/11/12/d33e096e-0378-49f7-ac58-8340170a1371.png"><br>在取证大师-&gt;取证结果-&gt;邮件解析 可知victor日常使用的电邮账号是：<br><strong><a href="mailto:&#x76;&#x69;&#99;&#x74;&#x6f;&#x72;&#x32;&#x30;&#x31;&#56;&#49;&#x31;&#x40;&#x68;&#x6f;&#116;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x76;&#x69;&#99;&#x74;&#x6f;&#x72;&#x32;&#x30;&#x31;&#56;&#49;&#x31;&#x40;&#x68;&#x6f;&#116;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></strong><br><img src="/images/2020/11/12/9d8fad12-b72e-4521-a71c-4a0bc913066d.png"></p>
+<h3 id="37-疑似答案错误）"><a href="#37-疑似答案错误）" class="headerlink" title="37(疑似答案错误）"></a>37(疑似答案错误）</h3><p><img src="/images/2020/11/12/1f076001-9982-48c0-bc6c-6d6ea1193ce5.png"><br>在取证大师-&gt;取证结果-&gt;邮件解析 可知<a href="mailto:&#118;&#105;&#99;&#116;&#x6f;&#x72;&#50;&#48;&#x31;&#x38;&#49;&#x31;&#64;&#x68;&#111;&#x74;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#118;&#105;&#99;&#116;&#x6f;&#x72;&#50;&#48;&#x31;&#x38;&#49;&#x31;&#64;&#x68;&#111;&#x74;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>最后一次更改密码时间是：<br><strong>2018-10-31</strong>选 <strong>C</strong><br><img src="/images/2020/11/12/b18ca19f-de97-4980-b36f-09f3eb54fbaf.png"></p>
 <h3 id="38"><a href="#38" class="headerlink" title="38"></a>38</h3><p><img src="/images/2020/11/12/f70a68a9-b79a-4419-8360-ab487e67df44.png"><br>在取证大师-&gt;取证结果-&gt;邮件解析 可知victor收到勒索电邮的时间是：<br><strong>2018-11-02 17:09 +8</strong><br><img src="/images/2020/11/12/30f99556-db2b-4982-a81b-7b17d33b2f7f.png"></p>
 <h3 id="39"><a href="#39" class="headerlink" title="39"></a>39</h3><p><img src="/images/2020/11/12/ba0249cf-9822-4ee4-9dce-9915dc10f4bc.png"><br>在取证大师-&gt;取证结果-&gt;邮件解析 可知发件人IP为<br><strong>220.246.55.13</strong><br><img src="/images/2020/11/12/d2c65612-2e2b-421e-9910-79969301b119.png"></p>
 <h3 id="40"><a href="#40" class="headerlink" title="40"></a>40</h3><p><img src="/images/2020/11/12/88d1b194-2b7d-41a1-a64d-2a8085417b1b.png"><br>将文件导出后计算MD5值为：<br><strong>15B64B15CC5A5442196471690D4A088B</strong><br><img src="/images/2020/11/12/42d2ced6-0b7a-41bd-abdd-0a72fb1901f4.png"></p>
@@ -486,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/11/12/2018%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/">http://example.com/2020/11/12/2018%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/</a>
+                    <a href="https://topk-li.github.io/2020/11/12/2018%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/">https://topk-li.github.io/2020/11/12/2018%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -561,7 +580,7 @@
                         <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -780,11 +799,13 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2024</span>
+                <span id="year">2020-2024</span>
             
             <a href="/about" target="_blank">你的朋友</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
             
             <br>
             
@@ -812,13 +833,13 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:topk_an@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -827,10 +848,6 @@
 
 
 
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
@@ -994,6 +1011,17 @@ $(function () {
 
     
 
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://topk-li.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
     
     
     
