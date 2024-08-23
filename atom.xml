@@ -6,7 +6,7 @@
   <link href="https://topk-li.github.io/atom.xml" rel="self"/>
   
   <link href="https://topk-li.github.io/"/>
-  <updated>2024-08-23T08:16:07.877Z</updated>
+  <updated>2024-08-23T10:14:37.239Z</updated>
   <id>https://topk-li.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CentOS7离线安装MySQL</title>
+    <link href="https://topk-li.github.io/2024/08/23/centos7-chi-xian-an-zhuang-mysql/"/>
+    <id>https://topk-li.github.io/2024/08/23/centos7-chi-xian-an-zhuang-mysql/</id>
+    <published>2024-08-23T09:42:40.000Z</published>
+    <updated>2024-08-23T10:14:37.239Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记录一下CentOS7离线安装MySQL过程&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="运维笔记" scheme="https://topk-li.github.io/categories/%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="运维" scheme="https://topk-li.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="MySQL" scheme="https://topk-li.github.io/tags/MySQL/"/>
+    
+    <category term="CentOS" scheme="https://topk-li.github.io/tags/CentOS/"/>
+    
+    <category term="openEuler" scheme="https://topk-li.github.io/tags/openEuler/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Openeuler系统修改SSH默认端口号</title>
     <link href="https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/"/>
     <id>https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/</id>
     <published>2024-08-23T07:24:06.000Z</published>
-    <updated>2024-08-23T08:16:07.877Z</updated>
+    <updated>2024-08-23T10:14:24.979Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录一下Openeuler系统修改SSH端口操作命令，省得日后再查。&lt;/p&gt;</summary>
@@ -33,7 +58,7 @@
     
     <category term="运维" scheme="https://topk-li.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
-    <category term="openeuler" scheme="https://topk-li.github.io/tags/openeuler/"/>
+    <category term="openEuler" scheme="https://topk-li.github.io/tags/openEuler/"/>
     
     <category term="ssh" scheme="https://topk-li.github.io/tags/ssh/"/>
     

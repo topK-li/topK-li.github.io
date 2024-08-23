@@ -4,11 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Openeuler系统修改SSH默认端口号, 你的朋友的博客">
-    <meta name="description" content="记录一下Openeuler系统修改SSH端口操作命令，省得日后再查。
+    <meta name="keywords" content="CentOS7离线安装MySQL, 你的朋友的博客">
+    <meta name="description" content="记录一下CentOS7离线安装MySQL过程
 
-一、修改前备份SSH配置文件sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-二、编辑SSH文件使用文本编辑器">
+一、下载MySQL选择对应系统的合适的版本下载下载地址
+二、上传安装包并解压将tar包上传到MySQL官网推荐位置/usr/local/mysql（也可是任意位置）
+mkdir /usr/lo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Openeuler系统修改SSH默认端口号 | 你的朋友的博客</title>
+    <title>CentOS7离线安装MySQL | 你的朋友的博客</title>
     <link rel="icon" type="image/jpeg" href="/images/profile_photo/1.jpeg">
     
 
@@ -305,12 +306,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Openeuler系统修改SSH默认端口号</h1>
+                    <h1 class="description center-align post-title">CentOS7离线安装MySQL</h1>
                 </div>
             </div>
         </div>
@@ -336,12 +337,16 @@
                                 <span class="chip bg-color">运维</span>
                             </a>
                         
-                            <a href="/tags/openEuler/">
-                                <span class="chip bg-color">openEuler</span>
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
-                            <a href="/tags/ssh/">
-                                <span class="chip bg-color">ssh</span>
+                            <a href="/tags/CentOS/">
+                                <span class="chip bg-color">CentOS</span>
+                            </a>
+                        
+                            <a href="/tags/openEuler/">
+                                <span class="chip bg-color">openEuler</span>
                             </a>
                         
                     </div>
@@ -394,37 +399,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>记录一下Openeuler系统修改SSH端口操作命令，省得日后再查。</p>
+                <p>记录一下CentOS7离线安装MySQL过程</p>
 <span id="more"></span>
-<h1 id="一、修改前备份SSH配置文件"><a href="#一、修改前备份SSH配置文件" class="headerlink" title="一、修改前备份SSH配置文件"></a>一、修改前备份SSH配置文件</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> /etc/ssh/sshd_config /etc/ssh/sshd_config.bak</code></pre>
-<h1 id="二、编辑SSH文件"><a href="#二、编辑SSH文件" class="headerlink" title="二、编辑SSH文件"></a>二、编辑SSH文件</h1><p>使用文本编辑器（<code>vi</code>、<code>vim</code>、<code>nano</code> 等）打开<code>/etc/ssh/sshd_config</code>文件</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vim</span> /etc/ssh/sshd_config</code></pre>
-<p>在文件中找到有关端口号的行并修改所需端口号。<br>默认情况下该行为：</p>
-<pre class="language-sshd_config" data-language="sshd_config"><code class="language-sshd_config">#Port 22</code></pre>
-<h1 id="三、保存并关闭文件"><a href="#三、保存并关闭文件" class="headerlink" title="三、保存并关闭文件"></a>三、保存并关闭文件</h1><p>保存更改并关闭编辑器。<br>（1）如果使用的是 <code>nano</code>，可以按 <code>Ctrl + O</code>，然后按 <code>Enter</code> 保存，最后按 <code>Ctrl + X</code> 退出。<br>（2）如果使用的是 <code>vim</code>，可以按 <code>ESC</code>，然后按 <code>：wq</code> 保存退出。</p>
-<h1 id="四、放行防火墙端口"><a href="#四、放行防火墙端口" class="headerlink" title="四、放行防火墙端口"></a>四、放行防火墙端口</h1><p>放行刚刚修改的SSH端口。如<code>22</code>端口，执行下面命令：</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">22</span>/tcp <span class="token parameter variable">--permanent</span></code></pre>
-<p>重启防火墙，使修改内容生效</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--reload</span></code></pre>
-<h1 id="五、检查SELinux策略"><a href="#五、检查SELinux策略" class="headerlink" title="五、检查SELinux策略"></a>五、检查SELinux策略</h1><p><strong>更改 <code>SELinux</code> 策略以允许 SSHD 在新端口上监听</strong></p>
-<p>首先，安装 <code>policycoreutils-python-utils</code>（或 <code>policycoreutils-python</code>，取决于你的发行版）</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> yum <span class="token function">install</span> policycoreutils-python-utils</code></pre>
-<p>然后添加一个新的策略规则</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> semanage port <span class="token parameter variable">-a</span> <span class="token parameter variable">-t</span> ssh_port_t <span class="token parameter variable">-p</span> tcp <span class="token number">22</span></code></pre>
-<p>这将允许 SSHD 服务在 <code>TCP</code> 端口 <code>22</code> 上运行</p>
-<p>检查端口 22 是否已经正确地被分配给了 SSH</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> semanage port <span class="token parameter variable">-l</span> <span class="token operator">|</span> <span class="token function">grep</span> ssh_port_t</code></pre>
-<p>重新启动 SSHD 服务</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart sshd</code></pre>
-<p>直接关闭<code>SELinux</code>重启sshd<em><strong>（不建议）</strong></em></p>
-<p>暂时关闭<code>SELinux</code></p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> setenforce <span class="token number">0</span></code></pre>
-
-<p>重新启动 SSHD 服务并重新启用 <code>SELinux</code> 强制模式</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart sshd
-<span class="token function">sudo</span> setenforce <span class="token number">1</span></code></pre>
-<p>检查 SELinux 状态和日志</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">getenforce</code></pre>
+<h2 id="一、下载MySQL"><a href="#一、下载MySQL" class="headerlink" title="一、下载MySQL"></a>一、下载MySQL</h2><p>选择对应系统的合适的版本下载<br><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">下载地址</a><br><img src="/images/2024/08/23/82209d43-eb35-452c-bd0c-0596e77fc756.png"></p>
+<h2 id="二、上传安装包并解压"><a href="#二、上传安装包并解压" class="headerlink" title="二、上传安装包并解压"></a>二、上传安装包并解压</h2><p>将tar包上传到MySQL官网推荐位置<code>/usr/local/mysql</code>（也可是任意位置）</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> /usr/local/mysql</code></pre>
+<p>解压<code>mysql-5.7.37-1.el7.x86_64.rpm-bundle.tar</code>包</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-xf</span> mysql-5.7.37-1.el7.x86_64.rpm-bundle.tar</code></pre>
+<p><img src="/images/2024/08/23/134f0575-750f-40c5-b32c-afab6aae9ab7.png"></p>
+<h2 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h2><p>因为是离线环境，<strong>建议</strong>在使用<code>yum</code>命令前先用以下命令清除本地<code>mirrorlist</code></p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum clean expire-cache</code></pre>
+<p>执行安装（<code>&#123;server,client,common,libs&#125;</code> 为必备，上文截图解压出的安装包并不需要全部安装）</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum localinstall <span class="token parameter variable">-y</span> <span class="token function">install</span> mysql-community-<span class="token punctuation">&#123;</span>server,client,common,libs<span class="token punctuation">&#125;</span>-*</code></pre>
+<p>查看是否安装成功</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> mysql</code></pre>
+<p><img src="/images/2024/08/23/ccd9d374-34bc-4f6e-882a-70fa31a6dc14.png"></p>
+<h2 id="四、启动MySQL"><a href="#四、启动MySQL" class="headerlink" title="四、启动MySQL"></a>四、启动MySQL</h2><p>启动mysql</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">systemctl start mysqld</code></pre>
+<p>查看mysql临时密码</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">grep</span> <span class="token string">'temporary password'</span> /var/log/mysqld.log</code></pre>
+<p><img src="/images/2024/08/23/3a31ddb3-75c8-4d0e-8678-6aadb76c4fd6.png"><br>使用临时密码登录mysql</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">mysql <span class="token parameter variable">-uroot</span> -p你的密码</code></pre>
+<p>这里由于生成的临时密码恰好有个<code>)</code>，在bash中会被识别为格式错误，所以使用</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">mysql <span class="token parameter variable">-uroot</span> <span class="token parameter variable">-p</span></code></pre>
+<p>然后再输入密码登陆就好<br><img src="/images/2024/08/23/872e0a83-5335-465b-a005-6ab1fe3591fa.png"></p>
+<h2 id="五、初始化MySQL"><a href="#五、初始化MySQL" class="headerlink" title="五、初始化MySQL"></a>五、初始化MySQL</h2><h4 id="1-修改登录密码"><a href="#1-修改登录密码" class="headerlink" title="1.修改登录密码"></a>1.修改登录密码</h4><p><strong>[不建议]</strong> 想要把密码设置简单一点需要调整密码校验强度（low&#x3D;最低）</p>
+<pre class="language-mysql" data-language="mysql"><code class="language-mysql">set global validate_password_policy&#x3D;LOW;</code></pre>
+<p><strong>[不建议]</strong> 修改密码长度限制（任意长度）</p>
+<pre class="language-mysql" data-language="mysql"><code class="language-mysql">set global validate_password_length&#x3D;4;</code></pre>
+<p>正式修改密码</p>
+<pre class="language-mysql" data-language="mysql"><code class="language-mysql">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;新密码&#39;;</code></pre>
+<h4 id="2-允许远程访问"><a href="#2-允许远程访问" class="headerlink" title="2.允许远程访问"></a>2.允许远程访问</h4><p><strong>[不建议]</strong> 修改<code>root</code>访问权限，设置允许远程访问<br>切换到<code>mysql</code>数据</p>
+<pre class="language-mysql" data-language="mysql"><code class="language-mysql">use mysql;</code></pre>
+<p>查看用户表<code>user</code></p>
+<pre class="language-mysql" data-language="mysql"><code class="language-mysql">select Host,User from user;</code></pre>
+<p>把<code>root</code>用户的<code>host</code>列修改为<code>%</code>（<code>Host=&#39;%&#39;</code>允许任何地址）</p>
+<pre class="language-mysql" data-language="mysql"><code class="language-mysql">update user set Host&#x3D;&#39;%&#39; where User&#x3D;&#39;root&#39;;</code></pre>
+<p>刷新立即生效</p>
+<pre class="language-mysql" data-language="mysql"><code class="language-mysql">flush privileges;</code></pre>
+<h4 id="3-打开防火墙端口"><a href="#3-打开防火墙端口" class="headerlink" title="3.打开防火墙端口"></a>3.打开防火墙端口</h4><p>如仍无法连接，检查防火墙状态<br>开放端口（mysql默认连接端口是3306）</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">firewall-cmd <span class="token parameter variable">--state</span>   <span class="token comment">#查看防火墙状态</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --list-ports   <span class="token comment">#查看防火墙所有开放的端口</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">3306</span>/tcp <span class="token parameter variable">--permanent</span>   <span class="token comment"># 开放3306端口</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --remove-port<span class="token operator">=</span><span class="token number">3306</span>/tcp <span class="token parameter variable">--permanent</span>   <span class="token comment">#关闭3306端口</span>
+firewall-cmd <span class="token parameter variable">--reload</span>   <span class="token comment"># 配置立即生效</span></code></pre>
+<p><strong>[极度不建议]</strong> 关闭防火墙</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">systemctl stop firewalld.service</code></pre>
                 
             </div>
             <hr/>
@@ -450,7 +470,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/">https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/</a>
+                    <a href="https://topk-li.github.io/2024/08/23/centos7-chi-xian-an-zhuang-mysql/">https://topk-li.github.io/2024/08/23/centos7-chi-xian-an-zhuang-mysql/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -492,12 +512,16 @@
                                     <span class="chip bg-color">运维</span>
                                 </a>
                             
-                                <a href="/tags/openEuler/">
-                                    <span class="chip bg-color">openEuler</span>
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
-                                <a href="/tags/ssh/">
-                                    <span class="chip bg-color">ssh</span>
+                                <a href="/tags/CentOS/">
+                                    <span class="chip bg-color">CentOS</span>
+                                </a>
+                            
+                                <a href="/tags/openEuler/">
+                                    <span class="chip bg-color">openEuler</span>
                                 </a>
                             
                         </div>
@@ -576,9 +600,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/08/23/centos7-chi-xian-an-zhuang-mysql/">
                     <div class="card-image">
@@ -596,9 +621,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -611,6 +636,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -641,31 +667,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/11/bian-yi-yuan-li-shi-yan-jian-dan-han-shu-hui-tu-yu-yan-de-jie-shi-qi/">
+                <a href="/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="编译原理实验——简单函数绘图语言的解释器">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Openeuler系统修改SSH默认端口号">
                         
-                        <span class="card-title">编译原理实验——简单函数绘图语言的解释器</span>
+                        <span class="card-title">Openeuler系统修改SSH默认端口号</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            编译原理布置了一个巨复杂的作业，完成一个简单函数绘图语言的解释器，秉承某电实验班的开源精神~在此记录一下方便后人。
+                            记录一下Openeuler系统修改SSH端口操作命令，省得日后再查。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BD%9C%E4%B8%9A/" class="post-category">
-                                    作业
+                            <a href="/categories/%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    运维笔记
                                 </a>
                             
                             
@@ -675,12 +701,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
                     </a>
                     
-                    <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">编译原理</span>
+                    <a href="/tags/openEuler/">
+                        <span class="chip bg-color">openEuler</span>
+                    </a>
+                    
+                    <a href="/tags/ssh/">
+                        <span class="chip bg-color">ssh</span>
                     </a>
                     
                 </div>
