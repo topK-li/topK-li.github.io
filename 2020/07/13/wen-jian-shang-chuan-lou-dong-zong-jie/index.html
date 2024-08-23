@@ -4,16 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MYSQL显错注入, 你的朋友的博客">
-    <meta name="description" content="对Mysql显错注入和联合查询进行记录整理
+    <meta name="keywords" content="文件上传漏洞总结, 你的朋友的博客">
+    <meta name="description" content="对各种基本文件上传漏洞进行总结
 
 
-SQL注入的原理:
-用户能够控制传参
-原本程序要执行的代码，拼接了用户输入的内容然后进行执行
-
-如何判断注入点:最传统做法：  and 1 = 1 显示正常  and 1 = 2 出现错误
-最">
+0x01  PASS-01
+pass-01源代码： 
+function checkFile() &amp;#123;
+    var file = document.getElementsByName(&#39;uplo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +23,7 @@ SQL注入的原理:
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MYSQL显错注入 | 你的朋友的博客</title>
+    <title>文件上传漏洞总结 | 你的朋友的博客</title>
     <link rel="icon" type="image/jpeg" href="/images/profile_photo/1.jpeg">
     
 
@@ -46,9 +44,7 @@ SQL注入的原理:
 
 
 
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="/css/post.css">
-
 
 
 
@@ -312,12 +308,12 @@ SQL注入的原理:
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MYSQL显错注入</h1>
+                    <h1 class="description center-align post-title">文件上传漏洞总结</h1>
                 </div>
             </div>
         </div>
@@ -327,12 +323,10 @@ SQL注入的原理:
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -349,8 +343,8 @@ SQL注入的原理:
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/SQL%E6%B3%A8%E5%85%A5/" class="post-category">
-                                SQL注入
+                            <a href="/categories/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" class="post-category">
+                                文件上传漏洞
                             </a>
                         
                     </div>
@@ -362,7 +356,7 @@ SQL注入的原理:
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-26
+                    2020-07-13
                 </div>
                 
 
@@ -391,28 +385,59 @@ SQL注入的原理:
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>对Mysql显错注入和联合查询进行记录整理</p>
+                <p>对各种基本文件上传漏洞进行总结</p>
 <span id="more"></span>
 
-<h2 id="SQL注入的原理"><a href="#SQL注入的原理" class="headerlink" title="SQL注入的原理:"></a>SQL注入的原理:</h2><ol>
-<li>用户能够控制传参</li>
-<li>原本程序要执行的代码，拼接了用户输入的内容然后进行执行</li>
-</ol>
-<h2 id="如何判断注入点"><a href="#如何判断注入点" class="headerlink" title="如何判断注入点:"></a>如何判断注入点:</h2><h4 id="最传统做法："><a href="#最传统做法：" class="headerlink" title="最传统做法："></a>最传统做法：</h4><p>  <code>and 1 = 1</code> 显示正常<br>  <code>and 1 = 2</code> 出现错误</p>
-<h4 id="最简单的方法："><a href="#最简单的方法：" class="headerlink" title="最简单的方法："></a>最简单的方法：</h4><p>页面后面加’,看是否报错</p>
-<p> 如果是数字型传参，可以尝试-1 —-&#x2F;&#x2F;+在URL栏代表空格，用的话需要编码<br> 例如：<br> <code>http://www.xxx.com/new.php?id=1</code> 页面显示id&#x3D;1的新闻<br> <code>http://www.xxx.com/new.php?id=2-1</code> 页面显示id&#x3D;1的新闻</p>
-<p> <code>and 1=1</code> <code>and 1=2</code> 被拦截的可能性太高了<br> 可以尝试 <code>and -1=-1</code> <code>and -1=-2</code> <code>and 1&gt;0 or 1=1</code> 或者直接 <code>or sleep(5)</code></p>
-<h2 id="Mysql显错注入-联合查询"><a href="#Mysql显错注入-联合查询" class="headerlink" title="Mysql显错注入-联合查询"></a>Mysql显错注入-联合查询</h2><ul>
-<li><p>使用order by获取字段数</p>
-</li>
-<li><p>使用联合查询获得表名</p>
-<p>  <code>union select 1,2,3</code>（找到回显点，例如回显点在3）<br>  <code>union select 1,2,table_name from information_schema.tables where table_schema = database() limit 0,1</code>(使用limit进行限制)</p>
-</li>
-<li><p>使用联合查询获得字段名<br><code>union select 1,2,column_name from information_schema.columns where table_schema = database() and table_name = &#39;表名&#39;</code>(使用limit进行限制)</p>
-</li>
-<li><p>获取内容<br><code>union select 1,2,字段名 from 表名</code></p>
-</li>
-</ul>
+<h2 id="0x01-PASS-01"><a href="#0x01-PASS-01" class="headerlink" title="0x01  PASS-01"></a>0x01  PASS-01</h2><hr>
+<p>pass-01源代码： </p>
+<pre class="language-php" data-language="php"><code class="language-php"><span class="token keyword">function</span> <span class="token function-definition function">checkFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> file <span class="token operator">=</span> document<span class="token operator">.</span><span class="token function">getElementsByName</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'upload_file'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">.</span>value<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>file <span class="token operator">==</span> <span class="token keyword type-declaration">null</span> <span class="token operator">||</span> <span class="token class-name">file</span> <span class="token operator">==</span> <span class="token string double-quoted-string">""</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"请选择要上传的文件!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">//定义允许上传的文件类型</span>
+    <span class="token keyword">var</span> allow_ext <span class="token operator">=</span> <span class="token string double-quoted-string">".jpg|.png|.gif"</span><span class="token punctuation">;</span>
+    <span class="token comment">//提取上传文件的类型</span>
+    <span class="token keyword">var</span> ext_name <span class="token operator">=</span> file<span class="token operator">.</span><span class="token function">substring</span><span class="token punctuation">(</span>file<span class="token operator">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"."</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//判断上传文件类型是否允许上传</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>allow_ext<span class="token operator">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>ext_name <span class="token operator">+</span> <span class="token string double-quoted-string">"|"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> errMsg <span class="token operator">=</span> <span class="token string double-quoted-string">"该文件不允许上传，请上传"</span> <span class="token operator">+</span> allow_ext <span class="token operator">+</span> <span class="token string double-quoted-string">"类型的文件,当前文件类型为："</span> <span class="token operator">+</span> ext_name<span class="token punctuation">;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span>errMsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+</code></pre>
+
+<p>通过查看源代码发现该题目为前端校验，只需要抓包后更改文件后缀即可。</p>
+<p><img src="/images/2024/08/22/00eacfa4-1378-4d0e-9c4d-f1d77c781588.jpg"><br><img src="/images/2024/08/22/5b28e2bc-9170-41fd-bbff-184da25d9a72.jpg"></p>
+<p>成功。</p>
+<h2 id="0x02-PASS-02"><a href="#0x02-PASS-02" class="headerlink" title="0x02  PASS-02"></a>0x02  PASS-02</h2><hr>
+<p>pass-02源代码：</p>
+<pre class="language-php" data-language="php"><code class="language-php"><span class="token variable">$is_upload</span> <span class="token operator">=</span> <span class="token constant boolean">false</span><span class="token punctuation">;</span>
+<span class="token variable">$msg</span> <span class="token operator">=</span> <span class="token constant">null</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">isset</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'submit'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">file_exists</span><span class="token punctuation">(</span><span class="token variable">$UPLOAD_ADDR</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'type'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string single-quoted-string">'image/jpeg'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'type'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string single-quoted-string">'image/png'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'type'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string single-quoted-string">'image/gif'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">move_uploaded_file</span><span class="token punctuation">(</span><span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'tmp_name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token variable">$UPLOAD_ADDR</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'/'</span> <span class="token operator">.</span> <span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token variable">$img_path</span> <span class="token operator">=</span> <span class="token variable">$UPLOAD_ADDR</span> <span class="token operator">.</span> <span class="token variable">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'upload_file'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token variable">$is_upload</span> <span class="token operator">=</span> <span class="token constant boolean">true</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token variable">$msg</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'文件类型不正确，请重新上传！'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token variable">$msg</span> <span class="token operator">=</span> <span class="token variable">$UPLOAD_ADDR</span><span class="token operator">.</span><span class="token string single-quoted-string">'文件夹不存在,请手工创建！'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+<p>分析可知：本题为Content-Type和文件头检测，与第一题类似。</p>
+<p><img src="/images/2024/08/22/ff9936fa-1e1d-46bb-a9f0-eeab32d05893.jpg"><br><img src="/images/2024/08/22/fd167b92-ead0-4a8f-a6ea-ca84d23a4057.jpg"></p>
+<p>成功。</p>
+<h2 id="0x03-PASS-03"><a href="#0x03-PASS-03" class="headerlink" title="0x03  PASS-03"></a>0x03  PASS-03</h2><hr>
 
                 
             </div>
@@ -439,7 +464,7 @@ SQL注入的原理:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://topk-li.github.io/2020/06/26/MYSQL%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5/">https://topk-li.github.io/2020/06/26/MYSQL%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5/</a>
+                    <a href="https://topk-li.github.io/2020/07/13/wen-jian-shang-chuan-lou-dong-zong-jie/">https://topk-li.github.io/2020/07/13/wen-jian-shang-chuan-lou-dong-zong-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -557,36 +582,45 @@ SQL注入的原理:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/13/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">
+                <a href="/2020/11/12/2018-mei-ya-bei-ge-ren-sai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="文件上传漏洞总结">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="2018美亚杯个人赛">
                         
-                        <span class="card-title">文件上传漏洞总结</span>
+                        <span class="card-title">2018美亚杯个人赛</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对各种基本文件上传漏洞进行总结
+                            由于版权原因，本文涉及的工具、镜像均不提供下载。
+案情信息1.林胜（Victor）是一名三十岁的中学教师。一天，他在家中使用计算机期间，收到一封勒索邮件，其中列出他电子邮件用户名和密码，及其他個人资料，並声称他的用户数据已被窃取，计算机已被
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" class="post-category">
-                                    文件上传漏洞
+                            <a href="/categories/%E7%94%B5%E5%AD%90%E5%8F%96%E8%AF%81/" class="post-category">
+                                    电子取证
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%B5%E5%AD%90%E5%8F%96%E8%AF%81/">
+                        <span class="chip bg-color">电子取证</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -598,48 +632,36 @@ SQL注入的原理:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/18/RSA%E7%AE%97%E6%B3%95%E7%9A%84%E7%AE%80%E6%98%93%E5%AE%9E%E7%8E%B0/">
+                <a href="/2020/06/26/mysql-xian-cuo-zhu-ru/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="RSA算法的简易实现">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="MYSQL显错注入">
                         
-                        <span class="card-title">RSA算法的简易实现</span>
+                        <span class="card-title">MYSQL显错注入</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ​	C语言程序设计综合实验课程布置了关于RSA算法实现的作业，查了查算法实现思想，特此记录。
+                            对Mysql显错注入和联合查询进行记录整理
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" class="post-category">
-                                    密码学
+                            <a href="/categories/SQL%E6%B3%A8%E5%85%A5/" class="post-category">
+                                    SQL注入
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">
-                        <span class="chip bg-color">密码学</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -675,87 +697,6 @@ SQL注入的原理:
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 

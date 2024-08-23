@@ -6,7 +6,7 @@
   <link href="https://topk-li.github.io/atom.xml" rel="self"/>
   
   <link href="https://topk-li.github.io/"/>
-  <updated>2024-08-23T07:02:03.650Z</updated>
+  <updated>2024-08-23T08:01:15.933Z</updated>
   <id>https://topk-li.github.io/</id>
   
   <author>
@@ -17,9 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Openeuler系统修改SSH默认端口号</title>
+    <link href="https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/"/>
+    <id>https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/</id>
+    <published>2024-08-23T07:24:06.000Z</published>
+    <updated>2024-08-23T08:01:15.933Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记录一下Openeuler系统修改SSH端口操作命令，省得日后再查。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>编译原理实验——简单函数绘图语言的解释器</title>
-    <link href="https://topk-li.github.io/2020/12/11/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E5%87%BD%E6%95%B0%E7%BB%98%E5%9B%BE%E8%AF%AD%E8%A8%80%E7%9A%84%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
-    <id>https://topk-li.github.io/2020/12/11/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E7%AE%80%E5%8D%95%E5%87%BD%E6%95%B0%E7%BB%98%E5%9B%BE%E8%AF%AD%E8%A8%80%E7%9A%84%E8%A7%A3%E9%87%8A%E5%99%A8/</id>
+    <link href="https://topk-li.github.io/2020/12/11/bian-yi-yuan-li-shi-yan-jian-dan-han-shu-hui-tu-yu-yan-de-jie-shi-qi/"/>
+    <id>https://topk-li.github.io/2020/12/11/bian-yi-yuan-li-shi-yan-jian-dan-han-shu-hui-tu-yu-yan-de-jie-shi-qi/</id>
     <published>2020-12-10T16:36:42.000Z</published>
     <updated>2024-08-23T07:02:03.650Z</updated>
     
@@ -39,8 +54,8 @@
   
   <entry>
     <title>2019美亚杯个人赛</title>
-    <link href="https://topk-li.github.io/2020/11/13/2019%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/"/>
-    <id>https://topk-li.github.io/2020/11/13/2019%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/</id>
+    <link href="https://topk-li.github.io/2020/11/13/2019-mei-ya-bei-ge-ren-sai/"/>
+    <id>https://topk-li.github.io/2020/11/13/2019-mei-ya-bei-ge-ren-sai/</id>
     <published>2020-11-13T06:54:29.000Z</published>
     <updated>2024-08-23T06:58:43.048Z</updated>
     
@@ -58,8 +73,8 @@
   
   <entry>
     <title>2018美亚杯个人赛</title>
-    <link href="https://topk-li.github.io/2020/11/12/2018%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/"/>
-    <id>https://topk-li.github.io/2020/11/12/2018%E7%BE%8E%E4%BA%9A%E6%9D%AF%E4%B8%AA%E4%BA%BA%E8%B5%9B/</id>
+    <link href="https://topk-li.github.io/2020/11/12/2018-mei-ya-bei-ge-ren-sai/"/>
+    <id>https://topk-li.github.io/2020/11/12/2018-mei-ya-bei-ge-ren-sai/</id>
     <published>2020-11-12T06:57:23.000Z</published>
     <updated>2024-08-23T06:55:30.728Z</updated>
     
@@ -78,8 +93,8 @@
   
   <entry>
     <title>文件上传漏洞总结</title>
-    <link href="https://topk-li.github.io/2020/07/13/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/"/>
-    <id>https://topk-li.github.io/2020/07/13/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</id>
+    <link href="https://topk-li.github.io/2020/07/13/wen-jian-shang-chuan-lou-dong-zong-jie/"/>
+    <id>https://topk-li.github.io/2020/07/13/wen-jian-shang-chuan-lou-dong-zong-jie/</id>
     <published>2020-07-13T12:47:54.000Z</published>
     <updated>2024-08-22T09:42:33.511Z</updated>
     
@@ -95,8 +110,8 @@
   
   <entry>
     <title>MYSQL显错注入</title>
-    <link href="https://topk-li.github.io/2020/06/26/MYSQL%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5/"/>
-    <id>https://topk-li.github.io/2020/06/26/MYSQL%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5/</id>
+    <link href="https://topk-li.github.io/2020/06/26/mysql-xian-cuo-zhu-ru/"/>
+    <id>https://topk-li.github.io/2020/06/26/mysql-xian-cuo-zhu-ru/</id>
     <published>2020-06-26T10:06:33.000Z</published>
     <updated>2020-06-26T11:37:06.000Z</updated>
     
@@ -112,8 +127,8 @@
   
   <entry>
     <title>RSA算法的简易实现</title>
-    <link href="https://topk-li.github.io/2020/04/18/RSA%E7%AE%97%E6%B3%95%E7%9A%84%E7%AE%80%E6%98%93%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://topk-li.github.io/2020/04/18/RSA%E7%AE%97%E6%B3%95%E7%9A%84%E7%AE%80%E6%98%93%E5%AE%9E%E7%8E%B0/</id>
+    <link href="https://topk-li.github.io/2020/04/18/rsa-suan-fa-de-jian-yi-shi-xian/"/>
+    <id>https://topk-li.github.io/2020/04/18/rsa-suan-fa-de-jian-yi-shi-xian/</id>
     <published>2020-04-18T14:33:18.000Z</published>
     <updated>2024-08-23T07:01:00.619Z</updated>
     
@@ -133,8 +148,8 @@
   
   <entry>
     <title>Google搜索使用技巧</title>
-    <link href="https://topk-li.github.io/2020/03/15/Google%E6%90%9C%E7%B4%A2%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-    <id>https://topk-li.github.io/2020/03/15/Google%E6%90%9C%E7%B4%A2%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
+    <link href="https://topk-li.github.io/2020/03/15/google-sou-suo-shi-yong-ji-qiao/"/>
+    <id>https://topk-li.github.io/2020/03/15/google-sou-suo-shi-yong-ji-qiao/</id>
     <published>2020-03-15T04:47:48.000Z</published>
     <updated>2020-04-09T13:01:50.000Z</updated>
     
