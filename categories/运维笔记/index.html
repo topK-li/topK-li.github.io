@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: SQL注入, 你的朋友的博客">
+    <meta name="keywords" content="分类: 运维笔记, 你的朋友的博客">
     <meta name="description" content="你的朋友的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类: SQL注入 | 你的朋友的博客</title>
+    <title>分类: 运维笔记 | 你的朋友的博客</title>
     <link rel="icon" type="image/jpeg" href="/images/profile_photo/1.jpeg">
     
 
@@ -367,7 +367,7 @@
                 
                 <a href="/categories/SQL%E6%B3%A8%E5%85%A5/" title="SQL注入: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
+                             chip-default "
                             style="background-color: #F5EEF8;">SQL注入
                         <span class="tag-length">1</span>
                     </span>
@@ -376,7 +376,7 @@
                 
                 <a href="/categories/%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/" title="运维笔记: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             style="background-color: #D5F5E3;">运维笔记
                         <span class="tag-length">1</span>
                     </span>
@@ -432,39 +432,34 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/06/26/mysql-xian-cuo-zhu-ru/">
+                    <a href="/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="MYSQL显错注入">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Openeuler系统修改SSH默认端口号">
                             
-                            <span class="card-title">MYSQL显错注入</span>
+                            <span class="card-title">Openeuler系统修改SSH默认端口号</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                对Mysql显错注入和联合查询进行记录整理
+                                记录一下Openeuler系统修改SSH端口操作命令，省得日后再查。
 
-
-SQL注入的原理:
-用户能够控制传参
-原本程序要执行的代码，拼接了用户输入的内容然后进行执行
-
-如何判断注入点:最传统做法：  and 1 = 1 显示正常  and 1 = 2 出现错误
-最
+一、修改前备份SSH配置文件sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+二、编辑SSH文件使用文本编辑器
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-23
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/SQL%E6%B3%A8%E5%85%A5/" class="post-category">
-                                    SQL注入
+                                <a href="/categories/%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    运维笔记
                                 </a>
                                 
                                 
@@ -472,6 +467,22 @@ SQL注入的原理:
                         </div>
                     </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                            <span class="chip bg-color">运维</span>
+                        </a>
+                        
+                        <a href="/tags/openeuler/">
+                            <span class="chip bg-color">openeuler</span>
+                        </a>
+                        
+                        <a href="/tags/ssh/">
+                            <span class="chip bg-color">ssh</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
