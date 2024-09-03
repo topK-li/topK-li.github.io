@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="VMware安装Win10后一直蓝屏重启，终止代码UNSUPPORTED PROCESSOR, 你的朋友的博客">
-    <meta name="description" content="VMware客户机操作系统的安装会中止，并出现绿屏（或蓝屏）和错误消息 UNSUPPORTED_PROCESSOR。原因似乎是 Microsoft 对 Hyper-V 进行了修改。影响的可能是 Windows 11 25179 或 2518">
+    <meta name="description" content="VMware客户机操作系统的安装会中止，并出现绿屏（或蓝屏）和错误消息 UNSUPPORTED_PROCESSOR。原因似乎是 Microsoft 对 Hyper-V 进行了修改。
+
+影响的可能是 Windows 11 25179 或 25">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -341,6 +343,10 @@
                                 <span class="chip bg-color">Windows10</span>
                             </a>
                         
+                            <a href="/tags/BUG/">
+                                <span class="chip bg-color">BUG</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -391,7 +397,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>VMware客户机操作系统的安装会中止，并出现绿屏（或蓝屏）和错误消息 UNSUPPORTED_PROCESSOR。原因似乎是 Microsoft 对 Hyper-V 进行了修改。<br><img src="/images/2024/08/27/dfa9cfa3-cfe7-4667-b0c3-2ec653c0782a.png"><br>影响的可能是 Windows 11 25179 或 25182 或 Windows Server 2022 20348.946。原因似乎是 Microsoft 针对 Hyper-V 的修改与 VMware 发生冲突。Windows 安全模式似乎不会触发此停止代码。</p>
+                <p>VMware客户机操作系统的安装会中止，并出现绿屏（或蓝屏）和错误消息 UNSUPPORTED_PROCESSOR。原因似乎是 Microsoft 对 Hyper-V 进行了修改。</p>
+<span id="more"></span>
+<p><img src="/images/2024/08/27/dfa9cfa3-cfe7-4667-b0c3-2ec653c0782a.png"><br>影响的可能是 Windows 11 25179 或 25182 或 Windows Server 2022 20348.946。原因似乎是 Microsoft 针对 Hyper-V 的修改与 VMware 发生冲突。Windows 安全模式似乎不会触发此停止代码。</p>
 <h3 id="所以最好的解决方法就是———换个新镜像"><a href="#所以最好的解决方法就是———换个新镜像" class="headerlink" title="所以最好的解决方法就是———换个新镜像"></a>所以最好的解决方法就是———<strong>换个新镜像</strong></h3><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows10">Win10iso下载链接</a></p>
 <h3 id="不想下载新镜像也不是没办法"><a href="#不想下载新镜像也不是没办法" class="headerlink" title="不想下载新镜像也不是没办法"></a>不想下载新镜像也不是没办法</h3><p>为了能够在 VMware Workstation 下的虚拟机中安装 Windows作为客户机操作系统，必须在第一次重启后终止虚拟机。<br>什么意思呢？就是蓝屏后关机。<br><img src="/images/2024/08/27/579e49e5-832a-4cf4-bf38-3a7e69d2e6aa.png"><br>然后在 CPU 下的客户机操作系统选项中，处理器数量和每个处理器的核心数量，必须将值设置为 1。<br><img src="/images/2024/08/27/c9643ba6-5013-4a16-b622-b42a385df7e6.png"><br>然后开机就行了。</p>
 
@@ -468,6 +476,10 @@
                             
                                 <a href="/tags/Windows10/">
                                     <span class="chip bg-color">Windows10</span>
+                                </a>
+                            
+                                <a href="/tags/BUG/">
+                                    <span class="chip bg-color">BUG</span>
                                 </a>
                             
                         </div>
@@ -571,11 +583,35 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            你的朋友
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%BC%8F%E6%B4%9E/" class="post-category">
+                                    漏洞
+                                </a>
+                            
+                            <a href="/categories/%E6%BC%8F%E6%B4%9E/PWN/" class="post-category">
+                                    PWN
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/POC/">
+                        <span class="chip bg-color">POC</span>
+                    </a>
+                    
+                    <a href="/tags/EXP/">
+                        <span class="chip bg-color">EXP</span>
+                    </a>
+                    
+                    <a href="/tags/Chrome/">
+                        <span class="chip bg-color">Chrome</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -625,16 +661,16 @@
                         <span class="chip bg-color">运维</span>
                     </a>
                     
-                    <a href="/tags/openEuler/">
-                        <span class="chip bg-color">openEuler</span>
-                    </a>
-                    
                     <a href="/tags/MySQL/">
                         <span class="chip bg-color">MySQL</span>
                     </a>
                     
                     <a href="/tags/CentOS/">
                         <span class="chip bg-color">CentOS</span>
+                    </a>
+                    
+                    <a href="/tags/openEuler/">
+                        <span class="chip bg-color">openEuler</span>
                     </a>
                     
                 </div>

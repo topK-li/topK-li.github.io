@@ -6,7 +6,7 @@
   <link href="https://topk-li.github.io/atom.xml" rel="self"/>
   
   <link href="https://topk-li.github.io/"/>
-  <updated>2024-08-28T07:10:37.475Z</updated>
+  <updated>2024-09-03T08:58:13.061Z</updated>
   <id>https://topk-li.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>修复 chrome 打不开第三方应用内链接</title>
+    <link href="https://topk-li.github.io/2024/09/03/xiu-fu-chrome-da-bu-kai-di-san-fang-ying-yong-nei-lian-jie/"/>
+    <id>https://topk-li.github.io/2024/09/03/xiu-fu-chrome-da-bu-kai-di-san-fang-ying-yong-nei-lian-jie/</id>
+    <published>2024-09-03T08:43:43.000Z</published>
+    <updated>2024-09-03T08:58:13.061Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;默认浏览器为-Chrome-时打不开第三方应用内链接（点击没有反应）&quot;&gt;&lt;a href=&quot;#默认浏览器为-Chrome-时打不开第三方应用内链接（点击没有反应）&quot; class=&quot;headerlink&quot; title=&quot;默认浏览器为 Chrome 时打不开第三方应用内链接（点击没有反应）&quot;&gt;&lt;/a&gt;默认浏览器为 Chrome 时打不开第三方应用内链接（点击没有反应）&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="运维笔记" scheme="https://topk-li.github.io/categories/%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="运维" scheme="https://topk-li.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="BUG" scheme="https://topk-li.github.io/tags/BUG/"/>
+    
+    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Google Chrome RCE——CVE-2024-2887的变体漏洞</title>
     <link href="https://topk-li.github.io/2024/08/27/google-chrome-rce-cve-2024-2887-de-bian-ti-lou-dong/"/>
     <id>https://topk-li.github.io/2024/08/27/google-chrome-rce-cve-2024-2887-de-bian-ti-lou-dong/</id>
     <published>2024-08-27T01:47:51.000Z</published>
-    <updated>2024-08-28T07:10:37.475Z</updated>
+    <updated>2024-09-03T08:57:46.613Z</updated>
     
     
       
@@ -34,6 +57,16 @@
     
     
     
+    <category term="漏洞" scheme="https://topk-li.github.io/categories/%E6%BC%8F%E6%B4%9E/"/>
+    
+    <category term="PWN" scheme="https://topk-li.github.io/categories/%E6%BC%8F%E6%B4%9E/PWN/"/>
+    
+    
+    <category term="POC" scheme="https://topk-li.github.io/tags/POC/"/>
+    
+    <category term="EXP" scheme="https://topk-li.github.io/tags/EXP/"/>
+    
+    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
     
   </entry>
   
@@ -42,16 +75,10 @@
     <link href="https://topk-li.github.io/2024/08/27/vmware-an-zhuang-win10-hou-yi-zhi-lan-ping-chong-qi-zhong-zhi-dai-ma-unsupported-processor/"/>
     <id>https://topk-li.github.io/2024/08/27/vmware-an-zhuang-win10-hou-yi-zhi-lan-ping-chong-qi-zhong-zhi-dai-ma-unsupported-processor/</id>
     <published>2024-08-27T01:39:58.000Z</published>
-    <updated>2024-08-27T01:41:51.199Z</updated>
+    <updated>2024-09-03T09:00:42.598Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;VMware客户机操作系统的安装会中止，并出现绿屏（或蓝屏）和错误消息 UNSUPPORTED_PROCESSOR。原因似乎是 Microsoft 对 Hyper-V 进行了修改。&lt;br&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;p&gt;VMware客户机操作系统的安装会中止，并出现绿屏（或蓝屏）和错误消息 UNSUPPORTED_PROCESSOR。原因似乎是 Microsoft 对 Hyper-V 进行了修改。&lt;/p&gt;</summary>
     
     
     
@@ -63,6 +90,8 @@
     <category term="VMware" scheme="https://topk-li.github.io/tags/VMware/"/>
     
     <category term="Windows10" scheme="https://topk-li.github.io/tags/Windows10/"/>
+    
+    <category term="BUG" scheme="https://topk-li.github.io/tags/BUG/"/>
     
   </entry>
   
@@ -83,11 +112,11 @@
     
     <category term="运维" scheme="https://topk-li.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
-    <category term="openEuler" scheme="https://topk-li.github.io/tags/openEuler/"/>
-    
     <category term="MySQL" scheme="https://topk-li.github.io/tags/MySQL/"/>
     
     <category term="CentOS" scheme="https://topk-li.github.io/tags/CentOS/"/>
+    
+    <category term="openEuler" scheme="https://topk-li.github.io/tags/openEuler/"/>
     
   </entry>
   
@@ -96,10 +125,10 @@
     <link href="https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/"/>
     <id>https://topk-li.github.io/2024/08/23/openeuler-xi-tong-xiu-gai-ssh-mo-ren-duan-kou-hao/</id>
     <published>2024-08-23T07:24:06.000Z</published>
-    <updated>2024-08-23T10:14:24.979Z</updated>
+    <updated>2024-09-03T08:54:42.583Z</updated>
     
     
-    <summary type="html">&lt;p&gt;记录一下Openeuler系统修改SSH端口操作命令，省得日后再查。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;记录一下openEuler系统修改SSH端口操作命令，省得日后再查。&lt;/p&gt;</summary>
     
     
     
@@ -179,15 +208,17 @@
     <link href="https://topk-li.github.io/2020/07/13/wen-jian-shang-chuan-lou-dong-zong-jie/"/>
     <id>https://topk-li.github.io/2020/07/13/wen-jian-shang-chuan-lou-dong-zong-jie/</id>
     <published>2020-07-13T12:47:54.000Z</published>
-    <updated>2024-08-22T09:42:33.511Z</updated>
+    <updated>2024-09-03T08:59:51.929Z</updated>
     
     
     <summary type="html">&lt;p&gt;对各种基本文件上传漏洞进行总结&lt;/p&gt;</summary>
     
     
     
-    <category term="文件上传漏洞" scheme="https://topk-li.github.io/categories/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+    <category term="漏洞" scheme="https://topk-li.github.io/categories/%E6%BC%8F%E6%B4%9E/"/>
     
+    
+    <category term="文件上传漏洞" scheme="https://topk-li.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
     
   </entry>
   
