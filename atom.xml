@@ -90,11 +90,11 @@
     <category term="运维笔记" scheme="https://topk-li.github.io/categories/%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
+    
     <category term="运维" scheme="https://topk-li.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
     <category term="BUG" scheme="https://topk-li.github.io/tags/BUG/"/>
-    
-    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
     
   </entry>
   
@@ -121,11 +121,11 @@
     <category term="PWN" scheme="https://topk-li.github.io/categories/%E6%BC%8F%E6%B4%9E/PWN/"/>
     
     
-    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
-    
     <category term="POC" scheme="https://topk-li.github.io/tags/POC/"/>
     
     <category term="EXP" scheme="https://topk-li.github.io/tags/EXP/"/>
+    
+    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
     
   </entry>
   
