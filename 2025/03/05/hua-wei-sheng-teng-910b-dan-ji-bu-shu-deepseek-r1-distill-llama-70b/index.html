@@ -395,7 +395,7 @@ NAME    MAJ:MIN">
                 <p>华为昇腾8卡910b单机部署DeepSeek-R1-Distill-Llama-70B的部署过程及部分小坑</p>
 <span id="more"></span>
 
-<p>查询NPU及内存命令：<br><img src="/images/2025/03/07/a6c0363f-13d8-452f-bee8-38570345d138.png" alt="image.png"><br><img src="/images/2025/03/07/5eb4d0eb-655b-437b-90dc-789bfa5cfc16.png" alt="image.png"></p>
+<p>查询NPU及内存命令：<br><img src="/images/2025/03/07/a6c0363f-13d8-452f-bee8-38570345d138.png"><br><img src="/images/2025/03/07/5eb4d0eb-655b-437b-90dc-789bfa5cfc16.png"></p>
 <h2 id="磁盘配置"><a href="#磁盘配置" class="headerlink" title="磁盘配置"></a>磁盘配置</h2><h4 id="1-查看存储设备"><a href="#1-查看存储设备" class="headerlink" title="1.查看存储设备"></a>1.查看存储设备</h4><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@bms-910b ~<span class="token punctuation">]</span><span class="token comment"># lsblk</span>
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda       <span class="token number">8</span>:0    <span class="token number">0</span>  150G  <span class="token number">0</span> disk 
@@ -444,7 +444,7 @@ nvme3n1     <span class="token number">259</span>:4    <span class="token number
 <h4 id="5、挂载硬盘"><a href="#5、挂载硬盘" class="headerlink" title="5、挂载硬盘"></a>5、挂载硬盘</h4><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@bms-910b ~<span class="token punctuation">]</span><span class="token comment"># mkdir -p /mnt/nvme01</span>
 <span class="token punctuation">[</span>root@bms-910b ~<span class="token punctuation">]</span><span class="token comment"># mount -t xfs /dev/nvme0n1p1 /mnt/nvme01</span></code></pre>
 <h4 id="6、配置开机自动挂载（加一行有关nvme01的配置）"><a href="#6、配置开机自动挂载（加一行有关nvme01的配置）" class="headerlink" title="6、配置开机自动挂载（加一行有关nvme01的配置）"></a>6、配置开机自动挂载（加一行有关nvme01的配置）</h4><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"UUID=<span class="token variable"><span class="token variable">$(</span>blkid <span class="token parameter variable">-s</span> UUID <span class="token parameter variable">-o</span> value /dev/nvme0n1p1<span class="token variable">)</span></span> /mnt/nvme01 xfs defaults 0 0"</span> <span class="token operator">>></span> /etc/fstab</code></pre>
-<p><img src="/images/2025/03/05/413612d2-9d4c-4e02-9a34-677fbe059594.png" alt="image.png"></p>
+<p><img src="/images/2025/03/05/413612d2-9d4c-4e02-9a34-677fbe059594.png"></p>
 <h2 id="昇腾社区上申请并获取最新的MindIE镜像安装包："><a href="#昇腾社区上申请并获取最新的MindIE镜像安装包：" class="headerlink" title="昇腾社区上申请并获取最新的MindIE镜像安装包："></a>昇腾社区上申请并获取最新的MindIE镜像安装包：</h2><table>
 <thead>
 <tr>
@@ -893,10 +893,10 @@ chmod -R 700 mindie-service&#x2F;security&#x2F;*</code></pre>
     &quot;max_tokens&quot;:128
   &#125;&#39;</code></pre>
 <h2 id="接入MaxKB"><a href="#接入MaxKB" class="headerlink" title="接入MaxKB"></a>接入MaxKB</h2><p>MaxKB部署参考<a target="_blank" rel="noopener" href="https://maxkb.cn/docs/">官方文档</a></p>
-<p>根据<code>config.json</code>配置文件中<code>&quot;openAiSupport&quot;</code>字段确认接口方式，此处为 <code>&quot;vllm&quot;</code><br>选择vllm<br><img src="/images/2025/03/12/c890a1db-7597-4730-8097-23caca57312b.png" alt="image.png"></p>
+<p>根据<code>config.json</code>配置文件中<code>&quot;openAiSupport&quot;</code>字段确认接口方式，此处为 <code>&quot;vllm&quot;</code><br>选择vllm<br><img src="/images/2025/03/12/c890a1db-7597-4730-8097-23caca57312b.png"></p>
 <p>输入<code>&quot;modelName&quot; : &quot;DeepSeek-R1-Distill-Llama-70B&quot;,</code>设置的模型名称，输入url，apikey随便填，然后保存使用即可。</p>
-<p><img src="/images/2025/03/12/e4bf5af9-82b9-4c71-bc58-c803bd1d955a.png" alt="image.png"></p>
-<h2 id="奇怪的问题"><a href="#奇怪的问题" class="headerlink" title="奇怪的问题"></a>奇怪的问题</h2><h4 id="DeepSeek输出时前标签丢失，在输出时只有"><a href="#DeepSeek输出时前标签丢失，在输出时只有" class="headerlink" title="DeepSeek输出时前标签丢失，在输出时只有"></a>DeepSeek输出时前<think>标签丢失，在输出时只有</think></h4><p><img src="/images/2025/03/12/3a8a5747-53fa-4a89-9891-7c56f19d9a2f.png" alt="image.png"><br>已知为BUG，需修改下载模型中的<code>tokenizer_config.json</code>，参考<a target="_blank" rel="noopener" href="https://github.com/vllm-project/vllm/issues/13125">Issue-13125</a><br><code>tokenizer_config.json</code>:</p>
+<p><img src="/images/2025/03/12/e4bf5af9-82b9-4c71-bc58-c803bd1d955a.png"></p>
+<h2 id="奇怪的问题"><a href="#奇怪的问题" class="headerlink" title="奇怪的问题"></a>奇怪的问题</h2><h4 id="DeepSeek输出时前标签丢失，在输出时只有"><a href="#DeepSeek输出时前标签丢失，在输出时只有" class="headerlink" title="DeepSeek输出时前标签丢失，在输出时只有"></a>DeepSeek输出时前<think>标签丢失，在输出时只有</think></h4><p><img src="/images/2025/03/12/3a8a5747-53fa-4a89-9891-7c56f19d9a2f.png"><br>已知为BUG，需修改下载模型中的<code>tokenizer_config.json</code>，参考<a target="_blank" rel="noopener" href="https://github.com/vllm-project/vllm/issues/13125">Issue-13125</a><br><code>tokenizer_config.json</code>:</p>
 <pre class="language-none"><code class="language-none">&#123;
   &quot;add_bos_token&quot;: true,
   &quot;add_eos_token&quot;: false,
