@@ -6,7 +6,7 @@
   <link href="https://topk-li.github.io/atom.xml" rel="self"/>
   
   <link href="https://topk-li.github.io/"/>
-  <updated>2024-09-14T07:17:03.651Z</updated>
+  <updated>2025-03-12T04:15:21.702Z</updated>
   <id>https://topk-li.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为昇腾910b单机部署DeepSeek-R1-Distill-Llama-70B</title>
+    <link href="https://topk-li.github.io/2025/03/05/hua-wei-sheng-teng-910b-dan-ji-bu-shu-deepseek-r1-distill-llama-70b/"/>
+    <id>https://topk-li.github.io/2025/03/05/hua-wei-sheng-teng-910b-dan-ji-bu-shu-deepseek-r1-distill-llama-70b/</id>
+    <published>2025-03-05T06:37:30.000Z</published>
+    <updated>2025-03-12T04:15:21.702Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;华为昇腾910b单机部署DeepSeek-R1-Distill-Llama-70B的部署过程及部分小坑&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AI" scheme="https://topk-li.github.io/categories/AI/"/>
+    
+    
+    <category term="DeepSeek" scheme="https://topk-li.github.io/tags/DeepSeek/"/>
+    
+    <category term="AI" scheme="https://topk-li.github.io/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>监控服务器进程内存使用，绘制折线图</title>
@@ -71,9 +92,9 @@
     
     <category term="运维" scheme="https://topk-li.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
-    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
-    
     <category term="BUG" scheme="https://topk-li.github.io/tags/BUG/"/>
+    
+    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
     
   </entry>
   
@@ -100,11 +121,11 @@
     <category term="PWN" scheme="https://topk-li.github.io/categories/%E6%BC%8F%E6%B4%9E/PWN/"/>
     
     
+    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
+    
     <category term="POC" scheme="https://topk-li.github.io/tags/POC/"/>
     
     <category term="EXP" scheme="https://topk-li.github.io/tags/EXP/"/>
-    
-    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
     
   </entry>
   
