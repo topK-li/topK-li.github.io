@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="在海光DCU-K100-AI-4上使用ollama和vLLM分别部署qwq-32B、DeepSeek, 你的朋友的博客">
-    <meta name="description" content="使用ollama部署下载镜像docker pull image.sourcefind.cn:5000/dcu/admin/base/pytorch:2.1.0-py3.10-dtk24.04.3-ubuntu20.04
-启动容器docker">
+    <meta name="description" content="一、使用ollama部署下载镜像docker pull image.sourcefind.cn:5000/dcu/admin/base/pytorch:2.1.0-py3.10-dtk24.04.3-ubuntu20.04
+启动容器dock">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -388,14 +388,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用ollama部署"><a href="#使用ollama部署" class="headerlink" title="使用ollama部署"></a>使用ollama部署</h1><h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull image.sourcefind.cn:5000/dcu/admin/base/pytorch:2.1.0-py3.10-dtk24.04.3-ubuntu20.04</code></pre>
-<h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run --shm-size 50g <span class="token parameter variable">--network</span><span class="token operator">=</span>host <span class="token parameter variable">--name</span><span class="token operator">=</span>ollama <span class="token punctuation">\</span>
+                <h1 id="一、使用ollama部署"><a href="#一、使用ollama部署" class="headerlink" title="一、使用ollama部署"></a>一、使用ollama部署</h1><h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull image.sourcefind.cn:5000/dcu/admin/base/pytorch:2.1.0-py3.10-dtk24.04.3-ubuntu20.04</code></pre>
+<h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run --shm-size 50g <span class="token parameter variable">--network</span><span class="token operator">=</span>host <span class="token parameter variable">--name</span><span class="token operator">=</span><span class="token punctuation">&#123;</span>容器名<span class="token punctuation">&#125;</span> <span class="token punctuation">\</span>
 <span class="token parameter variable">--privileged</span> <span class="token parameter variable">--device</span><span class="token operator">=</span>/dev/kfd <span class="token parameter variable">--device</span><span class="token operator">=</span>/dev/dri <span class="token punctuation">\</span>
 --cap-add<span class="token operator">=</span>SYS_PTRACE --security-opt <span class="token assign-left variable">seccomp</span><span class="token operator">=</span>unconfined <span class="token punctuation">\</span>
 <span class="token parameter variable">-v</span> /opt/hyhal:/opt/hyhal:ro <span class="token punctuation">\</span>
 <span class="token parameter variable">-v</span> /home/ollama:/ollama <span class="token punctuation">\</span>
 <span class="token parameter variable">--env</span> <span class="token assign-left variable">HIP_VISIBLE_DEVICES</span><span class="token operator">=</span><span class="token number">0,1</span>,2,3 <span class="token punctuation">\</span>
 <span class="token parameter variable">-it</span> image.sourcefind.cn:5000/dcu/admin/base/pytorch:2.1.0-py3.10-dtk24.04.3-ubuntu20.04 <span class="token function">bash</span></code></pre>
+<blockquote>
+<p>我有四张卡所以是HIP_VISIBLE_DEVICES&#x3D;0,1,2,3，根据自己情况来。</p>
+</blockquote>
 <p>在Docker环境里面，进入&#x2F;ollama，下载源码</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token parameter variable">-b</span> <span class="token number">0.5</span>.7 http://developer.sourcefind.cn/codes/OpenDAS/ollama.git <span class="token parameter variable">--depth</span><span class="token operator">=</span><span class="token number">1</span>
 <span class="token builtin class-name">cd</span> ollama</code></pre>
@@ -410,43 +413,65 @@ go <span class="token function">env</span> <span class="token parameter variable
 <span class="token function">make</span> <span class="token parameter variable">-j</span> <span class="token number">16</span>
 go build <span class="token builtin class-name">.</span></code></pre>
 
-<h4 id="编译成功后，应该能看到编译成功的可执行文件ollama"><a href="#编译成功后，应该能看到编译成功的可执行文件ollama" class="headerlink" title="编译成功后，应该能看到编译成功的可执行文件ollama:"></a>编译成功后，应该能看到编译成功的可执行文件ollama:</h4><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">HSA_OVERRIDE_GFX_VERSION</span><span class="token operator">=</span>设备型号（如: Z100L gfx906对应9.0.6；K100 gfx926对应9.2.6；K100AI gfx928对应9.2.8）
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">ROCR_VISIBLE_DEVICES</span><span class="token operator">=</span>所有设备号（0,1,2,3,4,5,6,<span class="token punctuation">..</span>.）/选择设备号
+<h4 id="编译成功后，应该能看到编译成功的可执行文件ollama"><a href="#编译成功后，应该能看到编译成功的可执行文件ollama" class="headerlink" title="编译成功后，应该能看到编译成功的可执行文件ollama:"></a>编译成功后，应该能看到编译成功的可执行文件ollama:</h4><p><img src="/images/2025/03/13/e756e239-7f6e-4c7a-9d77-fdb618832ae7.png"></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">HSA_OVERRIDE_GFX_VERSION</span><span class="token operator">=</span><span class="token number">9.2</span>.8（如: Z100L gfx906对应9.0.6；K100 gfx926对应9.2.6；K100AI gfx928对应9.2.8）
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">ROCR_VISIBLE_DEVICES</span><span class="token operator">=</span><span class="token number">0,1</span>,2,3（0,1,2,3,4,5,6,<span class="token punctuation">..</span>.）/选择设备号
 ./ollama serve  （选择可用设备，可通过上条命令输出结果查看）</code></pre>
+<h2 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h2><p>docker commit {上面的容器名} {临时容器名（我用的是tmp）}<br>在宿主机新建新建Dockerfile</p>
+<pre class="language-Dockerfile" data-language="Dockerfile"><code class="language-Dockerfile">FROM tmp
+ENV HSA_OVERRIDE_GFX_VERSION&#x3D;9.2.8
+ENV ROCR_VISIBLE_DEVICES&#x3D;0,1,2,3
+ENV PATH&#x3D;&quot;&#x2F;home&#x2F;ollama&#x2F;ollama:$&#123;PATH&#125;&quot;
+ENV OLLAMA_MODELS&#x3D;&quot;&#x2F;home&#x2F;ollama&#x2F;models&#x2F;&quot;
+ENV OLLAMA_HOST&#x3D;0.0.0.0:&#123;端口号&#125;
+ENTRYPOINT [&quot;&#x2F;home&#x2F;ollama&#x2F;ollama&quot;]
+CMD [&quot;serve&quot;]</code></pre>
 
-<h1 id="使用vLLM部署"><a href="#使用vLLM部署" class="headerlink" title="使用vLLM部署"></a>使用vLLM部署</h1><h2 id="下载镜像-1"><a href="#下载镜像-1" class="headerlink" title="下载镜像"></a>下载镜像</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull image.sourcefind.cn:5000/dcu/admin/base/custom:vllm0.5.0-dtk24.04.1-ubuntu20.04-py310-zk-v1</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-t</span> ollama <span class="token punctuation">&#123;</span>你的Dockerfile路径<span class="token punctuation">&#125;</span> <span class="token comment">#ollama可替换为你的自定义容器名</span></code></pre>
+
+
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run --shm-size 100g <span class="token parameter variable">--network</span><span class="token operator">=</span>host <span class="token parameter variable">--name</span><span class="token operator">=</span>ollama <span class="token punctuation">\</span>
+<span class="token parameter variable">--privileged</span> <span class="token parameter variable">--device</span><span class="token operator">=</span>/dev/kfd <span class="token parameter variable">--device</span><span class="token operator">=</span>/dev/dri <span class="token punctuation">\</span>
+--cap-add<span class="token operator">=</span>SYS_PTRACE --security-opt <span class="token assign-left variable">seccomp</span><span class="token operator">=</span>unconfined <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /opt/hyhal:/opt/hyhal:ro <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/ollama/:/home <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/ollama/models/:/home/models <span class="token punctuation">\</span>
+<span class="token parameter variable">-d</span>  ollama</code></pre>
+<h4 id="进入容器并测试ollama是否运行"><a href="#进入容器并测试ollama是否运行" class="headerlink" title="进入容器并测试ollama是否运行"></a>进入容器并测试ollama是否运行</h4><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> ollama <span class="token function">bash</span>
+ollama <span class="token parameter variable">-v</span></code></pre>
+<h4 id="然后运行qwq-32B，这里采用默认的Q4"><a href="#然后运行qwq-32B，这里采用默认的Q4" class="headerlink" title="然后运行qwq-32B，这里采用默认的Q4"></a>然后运行qwq-32B，这里采用默认的Q4</h4><pre class="language-bash" data-language="bash"><code class="language-bash">ollama run qwq</code></pre>
+<h1 id="二、使用vLLM部署"><a href="#二、使用vLLM部署" class="headerlink" title="二、使用vLLM部署"></a>二、使用vLLM部署</h1><h2 id="下载镜像-1"><a href="#下载镜像-1" class="headerlink" title="下载镜像"></a>下载镜像</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull image.sourcefind.cn:5000/dcu/admin/base/custom:vllm0.5.0-dtk24.04.1-ubuntu20.04-py310-zk-v1</code></pre>
 
 <h2 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h2><p>从ModelScope下载。</p>
 <h4 id="1、安装ModelScope"><a href="#1、安装ModelScope" class="headerlink" title="1、安装ModelScope"></a>1、安装ModelScope</h4><pre class="language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> modelscope</code></pre>
-<h4 id="2、下载qwq-32b"><a href="#2、下载qwq-32b" class="headerlink" title="2、下载qwq-32b"></a>2、下载qwq-32b</h4><pre class="language-bash" data-language="bash"><code class="language-bash">modelscope download <span class="token parameter variable">--model</span> Qwen/QwQ-32B <span class="token parameter variable">--local_dir</span> /下载目录</code></pre>
+<h4 id="2、下载DeepSeek-R1-Distill-Llama-70B"><a href="#2、下载DeepSeek-R1-Distill-Llama-70B" class="headerlink" title="2、下载DeepSeek-R1-Distill-Llama-70B"></a>2、下载DeepSeek-R1-Distill-Llama-70B</h4><pre class="language-bash" data-language="bash"><code class="language-bash">modelscope download <span class="token parameter variable">--model</span> deepseek-ai/DeepSeek-R1-Distill-Llama-70B <span class="token parameter variable">--local_dir</span> /下载目录</code></pre>
 
-<h2 id="启动容器-1"><a href="#启动容器-1" class="headerlink" title="启动容器"></a>启动容器</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run --shm-size 50g <span class="token parameter variable">--network</span><span class="token operator">=</span>host <span class="token parameter variable">--name</span><span class="token operator">=</span>qwq-32B <span class="token punctuation">\</span>
+<h2 id="启动容器-1"><a href="#启动容器-1" class="headerlink" title="启动容器"></a>启动容器</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run --shm-size 50g <span class="token parameter variable">--network</span><span class="token operator">=</span>host <span class="token parameter variable">--name</span><span class="token operator">=</span>DeepSeek-R1-Distill-Llama-70B <span class="token punctuation">\</span>
 <span class="token parameter variable">--privileged</span> <span class="token parameter variable">--device</span><span class="token operator">=</span>/dev/kfd <span class="token parameter variable">--device</span><span class="token operator">=</span>/dev/dri <span class="token punctuation">\</span>
 --cap-add<span class="token operator">=</span>SYS_PTRACE --security-opt <span class="token assign-left variable">seccomp</span><span class="token operator">=</span>unconfined <span class="token punctuation">\</span>
 <span class="token parameter variable">-v</span> /opt/hyhal:/opt/hyhal:ro <span class="token punctuation">\</span>
 <span class="token parameter variable">-v</span> <span class="token punctuation">&#123;</span>本地模型目录<span class="token punctuation">&#125;</span>:/models:ro <span class="token punctuation">\</span>
 <span class="token parameter variable">--env</span> <span class="token assign-left variable">HIP_VISIBLE_DEVICES</span><span class="token operator">=</span><span class="token number">0,1</span>,2,3 <span class="token punctuation">\</span>
 <span class="token parameter variable">-it</span> image.sourcefind.cn:5000/dcu/admin/base/custom:vllm0.5.0-dtk24.04.1-ubuntu20.04-py310-zk-v1 <span class="token function">bash</span></code></pre>
+<blockquote>
 <p>注：四块卡使用，HIP_VISIBLE_DEVICES&#x3D;0,1,2,3（根据实际调整）</p>
+</blockquote>
 <p>shell断开后进入容器：</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> qwq-32B <span class="token function">bash</span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> DeepSeek-R1-Distill-Llama-70B <span class="token function">bash</span></code></pre>
 <p>进入容器后使用<code>rocm-smi</code>查询DCU<br><img src="/images/2025/03/12/39f01cd4-56b5-480a-9b6f-06242772c28e.png"></p>
 <h2 id="启动vLLM"><a href="#启动vLLM" class="headerlink" title="启动vLLM"></a>启动vLLM</h2><h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NCCL_DEBUG</span><span class="token operator">=</span>info
 <span class="token builtin class-name">export</span> <span class="token assign-left variable">NCCL_P2P_DISABLE</span><span class="token operator">=</span><span class="token number">1</span>
 <span class="token builtin class-name">export</span> <span class="token assign-left variable">HSA_FORCE_FINE_GRAIN_PCIE</span><span class="token operator">=</span><span class="token number">1</span></code></pre>
-<p>启动</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">python <span class="token parameter variable">-m</span> vllm.entrypoints.openai.api_server <span class="token punctuation">\</span>
-  <span class="token parameter variable">--model</span> /models/qwq-32b <span class="token punctuation">\</span>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><pre class="language-bash" data-language="bash"><code class="language-bash">python <span class="token parameter variable">-m</span> vllm.entrypoints.openai.api_server <span class="token punctuation">\</span>
+  <span class="token parameter variable">--model</span> /models/DeepSeek-R1-Distill-Llama-70B <span class="token punctuation">\</span>
   <span class="token parameter variable">--dtype</span> float16 <span class="token punctuation">\</span>
   --trust-remote-code <span class="token punctuation">\</span>
   --gpu-memory-utilization <span class="token number">0.98</span> <span class="token punctuation">\</span>
   --tensor-parallel-size <span class="token number">4</span> <span class="token punctuation">\</span>
   --max-num-seqs <span class="token number">32</span> <span class="token punctuation">\</span>
-  --max-model-len <span class="token number">400</span></code></pre>
+  --max-model-len <span class="token number">20000</span></code></pre>
 
-<blockquote>
-<p>参数说明：</p>
-<table>
+<h4 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h4><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -454,7 +479,7 @@ go build <span class="token builtin class-name">.</span></code></pre>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>--model /models/qwq-32b</code></td>
+<td><code>--model /models/DeepSeek-R1-Distill-Llama-70B</code></td>
 <td>指定加载的模型路径</td>
 </tr>
 <tr>
@@ -481,12 +506,7 @@ go build <span class="token builtin class-name">.</span></code></pre>
 <td><code>--max-model-len 20000</code></td>
 <td>单次请求中模型能处理的最大token数量</td>
 </tr>
-<tr>
-<td><code>-it</code></td>
-<td>启动交互式容器以便实时交互操作</td>
-</tr>
 </tbody></table>
-</blockquote>
 
                 
             </div>
