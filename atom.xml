@@ -6,7 +6,7 @@
   <link href="https://topk-li.github.io/atom.xml" rel="self"/>
   
   <link href="https://topk-li.github.io/"/>
-  <updated>2025-03-18T06:07:50.539Z</updated>
+  <updated>2025-08-12T09:02:57.134Z</updated>
   <id>https://topk-li.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次尝试Ubuntu 24.04.3 + TensorRT-LLM + DeepSeekv3</title>
+    <link href="https://topk-li.github.io/2025/08/11/ji-yi-ci-chang-shi-ubuntu-24-04-3-tensorrt-llm-deepseekv3/"/>
+    <id>https://topk-li.github.io/2025/08/11/ji-yi-ci-chang-shi-ubuntu-24-04-3-tensorrt-llm-deepseekv3/</id>
+    <published>2025-08-11T07:14:40.000Z</published>
+    <updated>2025-08-12T09:02:57.134Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;尝试一下部署TensorRT-LLM + DeepSeekv3&lt;br&gt;配置：Ubuntu 24.04.3，L20 48GB ×2，Xeon 6530 ×2，256GB 内存&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AI" scheme="https://topk-li.github.io/categories/AI/"/>
+    
+    
+    <category term="AI" scheme="https://topk-li.github.io/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>Navicat无限试用</title>
@@ -138,9 +157,9 @@
     
     <category term="运维" scheme="https://topk-li.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
-    <category term="BUG" scheme="https://topk-li.github.io/tags/BUG/"/>
-    
     <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
+    
+    <category term="BUG" scheme="https://topk-li.github.io/tags/BUG/"/>
     
   </entry>
   
@@ -167,11 +186,11 @@
     <category term="PWN" scheme="https://topk-li.github.io/categories/%E6%BC%8F%E6%B4%9E/PWN/"/>
     
     
-    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
-    
     <category term="POC" scheme="https://topk-li.github.io/tags/POC/"/>
     
     <category term="EXP" scheme="https://topk-li.github.io/tags/EXP/"/>
+    
+    <category term="Chrome" scheme="https://topk-li.github.io/tags/Chrome/"/>
     
   </entry>
   
